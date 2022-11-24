@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const { SECRET_KEY } = process.env;
+const { ACCESS_TOKEN_SECRET_KEY, REFRESH_TOKEN_SECRET_KEY } = process.env;
 
 const login = async (req, res) => {
   const { email, password } = req.body;
@@ -20,11 +20,21 @@ const login = async (req, res) => {
     throw RequestError(401, "Email or password is wrong");
   }
   const payload = { id: requestedUser._id };
-  const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "1h" });
-  await User.findByIdAndUpdate(requestedUser._id, { token });
+  const accessToken = jwt.sign(payload, ACCESS_TOKEN_SECRET_KEY, {
+    expiresIn: "1m",
+  });
+  const refreshToken = jwt.sign(payload, REFRESH_TOKEN_SECRET_KEY, {
+    expiresIn: "7d",
+  });
+
+  await User.findByIdAndUpdate(requestedUser._id, {
+    accessToken,
+    refreshToken,
+  });
 
   res.status(200).json({
-    token,
+    accessToken,
+    refreshToken,
     user: {
       name: requestedUser.name,
       email,
