@@ -17,7 +17,11 @@ const userSchema = Schema(
       unique: true,
     },
 
-    token: {
+    accessToken: {
+      type: String,
+      default: null,
+    },
+    refreshToken: {
       type: String,
       default: null,
     },
