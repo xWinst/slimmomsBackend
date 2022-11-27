@@ -1,11 +1,10 @@
 const { RequestError } = require("../../helpers");
-// const bcryptjs = require("bcryptjs");
-// const User = require("../../models/user");
 
 const getUser = async (req, res) => {
-    const { name, email } = req.user;
+    const { name, email, dailyRate } = req.user;
 
     res.json({
+        dailyRate,
         name,
         email,
     });
