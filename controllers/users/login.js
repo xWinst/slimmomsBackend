@@ -39,6 +39,7 @@ const login = async (req, res) => {
             name: requestedUser.name,
             email,
             dailyRate: requestedUser.dailyRate,
+            bloodGroup: requestedUser.bloodGroup
         },
     });
 };

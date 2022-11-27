@@ -23,6 +23,11 @@ const userSchema = Schema(
             default: 0,
         },
 
+        bloodGroup: {
+            type: Number,
+            default: 0,
+        },
+
         accessToken: {
             type: String,
             default: null,

@@ -26,6 +26,7 @@ const refreshSchema = Joi.object({
 
 const update = Joi.object({
     dailyRate: Joi.number().required(),
+    bloodGroup: Joi.number().required(),
 });
 
 module.exports = { registerSchema, loginSchema, refreshSchema, update };
