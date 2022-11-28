@@ -28,7 +28,7 @@ async function getAll(req, res) {
 
 async function add(req, res) {
     const { _id: owner } = req.user;
-    console.log(req.body);
+    console.log("add:", req.body);
     const result = await UserProduct.create({ ...req.body, owner });
 
     res.status(201).json(result);
