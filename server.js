@@ -15,5 +15,3 @@ mongoose
         console.log(error.message);
         process.exit(1);
     });
-
-module.exports = app;

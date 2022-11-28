@@ -14,6 +14,10 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
+app.use("/", (req, res) => {
+    res.json({ hello: "Bingo!!!" });
+});
+
 app.use("/api/users", usersRouter);
 app.use("/api/products", productsRouter);
 
