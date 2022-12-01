@@ -4,5 +4,14 @@ const logout = require("./logout");
 const refresh = require("./refresh");
 const getUser = require("./getUser");
 const setDailyRate = require("./setDailyRate");
+const googleAuth = require("./googleAuth");
 
-module.exports = { register, login, logout, refresh, getUser, setDailyRate };
+module.exports = {
+  register,
+  login,
+  logout,
+  refresh,
+  getUser,
+  setDailyRate,
+  googleAuth,
+};
