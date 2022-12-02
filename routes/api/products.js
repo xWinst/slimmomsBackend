@@ -2,11 +2,6 @@ const express = require("express");
 const ctrl = require("../../controllers/users");
 const { ctrlWrapper } = require("../../helpers");
 const { validateBody, auth } = require("../../middlewares");
-// const {
-//     registerSchema,
-//     loginSchema,
-//     refreshSchema,
-// } = require("../../schemas/users");
 
 const { Product } = require("../../models/product");
 const { UserProduct, schemas } = require("../../models/userProduct");
