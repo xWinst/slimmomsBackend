@@ -8,7 +8,6 @@ dotenv.config();
 const { ACCESS_TOKEN_SECRET_KEY, REFRESH_TOKEN_SECRET_KEY } = process.env;
 
 const login = async (req, res) => {
-    console.log("res: ", res);
     const { email, password } = req.body;
     const requestedUser = await User.findOne({ email });
 

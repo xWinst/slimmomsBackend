@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-// const Joi = require("joi");
 const { handleSaveError } = require("../helpers");
 
 const userSchema = Schema(
@@ -20,6 +19,13 @@ const userSchema = Schema(
 
         dailyRate: {
             type: Number,
+            default: 0,
+        },
+
+        weight: {
+            type: Number,
+            min: 0,
+            max: 400,
             default: 0,
         },
 
