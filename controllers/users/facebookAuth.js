@@ -26,11 +26,6 @@ const facebookAuth = async (req, res) => {
         dailyRate: user.dailyRate,
         bloodGroup: user.bloodGroup,
     };
-    // res.status(200).json({
-    //     accessToken,
-    //     refreshToken,
-    //     userToSend,
-    // });
     res.redirect(
         `${REDIRECT_URL}?accessToken=${accessToken}&refreshToken=${refreshToken}&user=${JSON.stringify(
             userToSend
