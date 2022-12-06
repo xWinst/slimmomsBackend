@@ -55,7 +55,9 @@ const addProduct = Joi.object({
     consumed: Joi.number(),
     product: Joi.object()
         .keys({
-            name: Joi.string().required(),
+            name: Joi.array()
+                .items(Joi.string().required(), Joi.string().required())
+                .required(),
             weight: Joi.number().required(),
             calories: Joi.number().required(),
         })
